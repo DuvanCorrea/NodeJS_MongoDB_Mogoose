@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const uri = "mongodb://localhost:27017/users";
+const uri = "mongodb://localhost:27017/veterinaria";
 
 // Conecting database
 const db = mongoose
