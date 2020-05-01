@@ -11,15 +11,10 @@ const ctl = {
     });
 
     // save pet in database
-    await mascota.save((err, document) => {
-      if (err) {
-        console.log("Error >>> ", err);
-      }
-      return document;
-    });
+    await mascota.save();
   },
   listarMascotas: async () => {
-    const mascotas = Mascota.find();
+    const mascotas = await Mascota.find();
     return mascotas;
   },
 };

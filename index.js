@@ -1,4 +1,12 @@
 require("./connection");
 const ctlMascota = require("./controllers/mascota");
 
-//ctlMascota.agregarMascota(2, "iris", "conejo", "Fernanda");
+async () => {
+  const prueba = await ctlMascota.agregarMascota(
+    2,
+    "iris",
+    "conejo",
+    "Fernanda"
+  );
+  console.log(prueba);
+};
