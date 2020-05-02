@@ -17,6 +17,10 @@ const ctl = {
     const mascotas = await Mascota.find();
     return mascotas;
   },
+  encontrarUnoPorId: async (id) => {
+    const mascota = await Mascota.findOne({ id: id });
+    return mascota;
+  },
 };
 
 module.exports = ctl;

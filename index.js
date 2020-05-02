@@ -11,3 +11,8 @@ const ctlMascotas = require("./controllers/mascota");
 //   .agregarMascota(2, "perro", "lasis", "Duvan")
 //   .then((mascota) => console.log("Mascota :D >>> ", mascota))
 //   .catch((err) => console.log("error >>> ", err));
+
+ctlMascotas
+  .encontrarUnoPorId(2)
+  .then((mascota) => console.log("Mascota por id :D >>> ", mascota))
+  .catch((err) => console.log("error >>> ", err));
