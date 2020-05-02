@@ -1,12 +1,8 @@
 require("./connection");
-const ctlMascota = require("./controllers/mascota");
+const Mascota = require("./models/Mascota");
+const ctlMascotas = require("./controllers/mascota");
 
-async () => {
-  const prueba = await ctlMascota.agregarMascota(
-    2,
-    "iris",
-    "conejo",
-    "Fernanda"
-  );
-  console.log(prueba);
-};
+ctlMascotas
+  .listarMascotas()
+  .then((mascotas) => console.log("Mascotas :D >>> ", mascotas))
+  .catch((err) => console.log("error >>> ", err));

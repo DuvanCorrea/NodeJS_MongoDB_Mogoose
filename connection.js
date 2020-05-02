@@ -1,20 +1,16 @@
 const mongoose = require("mongoose");
+
 const uri = "mongodb://localhost:27017/veterinaria";
 
-(async () => {
-  await mongoose
-    .connect(uri, {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-    })
-    .catch((e) => {
-      console.log("Error >>> ", e);
-    });
-})();
+mongoose
+  .connect(uri, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  })
+  .catch((e) => {
+    console.log("error >>> ", e);
+  });
 
-// message db is connect
-mongoose.connection.on("open", (_) => {
-  console.log("DB connected in ", uri);
+mongoose.connection.once("open", () => {
+  console.log("DB is connect >>> ", uri);
 });
-
-console.log("Esto deberia estar despues de conectarse");
